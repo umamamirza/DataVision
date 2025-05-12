@@ -43,6 +43,7 @@
         </div>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 
@@ -62,14 +63,12 @@ $(document).ready(function () {
         ]
     });
 
-    // CSRF Setup
     $.ajaxSetup({
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-TOKEN': $('meta[name=\"csrf-token\"]').attr('content')
         }
     });
 
-    // Delete functionality
     $(document).on('click', '.delete-btn', function () {
         var id = $(this).data('id');
         if (confirm('Are you sure you want to delete this employee?')) {
